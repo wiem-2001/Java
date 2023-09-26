@@ -63,28 +63,27 @@ public class Zoo {
     public String toString() {
         return "Name: " + name + ", City: " + city + ", N° Cages/Animals: " + nbrCages;
     }
-    public boolean isZooFull(Animal[] animals,int nbrCages)
+    public boolean isZooFull(Animal[] animals)
     {
-     if(animals!=null && nbrCages!=0)
+     if(animals.length==nbrCages)
      {
-         return false;
-     }
-     else{
          return true;
      }
+     else{
+         return false;
+     }
     }
+    
     public Zoo comparerZoo(Zoo z1, Zoo z2)
     {
             if(z1.animals.length>z2.animals.length)
             {
                 return z1;
             }
-            else if (z2.animals.length>z1.animals.length)
+            else (z2.animals.length>z1.animals.length)
             {
                 return z2;
             }
-            else{
-                return z1;
-            }
+            
     }
 }
