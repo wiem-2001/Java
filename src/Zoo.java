@@ -2,28 +2,27 @@ public class Zoo {
 
     Animal[] animals;
     String name, city;
-    final int nbrCages=25;
+    final int NUMBER_OF_CAGES=25;
 
     int nbrAnimals;
 
     public Zoo() {
     }
-  
-  
+
     public Zoo(String name, String city) {
-        animals = new Animal[nbrCages];
+        animals = new Animal[NUMBER_OF_CAGES];
         this.name = name;
         this.city = city;
     }
 
     void displayZoo() {
-        System.out.println("Name: " + name + ", City: " + city + ", N° Cages/Animals: " + nbrCages);
+        System.out.println("Name: " + name + ", City: " + city + ", N° Cages/Animals: " + NUMBER_OF_CAGES);
     }
 
     boolean addAnimal(Animal animal) {
         if (searchAnimal(animal) != -1)
             return false;
-        if (nbrAnimals == nbrCages)
+        if (nbrAnimals == NUMBER_OF_CAGES)
             return false;
         animals[nbrAnimals] = animal;
         nbrAnimals++;
@@ -61,11 +60,11 @@ public class Zoo {
 
     @Override
     public String toString() {
-        return "Name: " + name + ", City: " + city + ", N° Cages/Animals: " + nbrCages;
+        return "Name: " + name + ", City: " + city + ", N° Cages/Animals: " + NUMBER_OF_CAGES;
     }
-    public boolean isZooFull(Animal[] animals,int nbrCages)
+    public boolean isZooFull(Animal[] animals,int NUMBER_OF_CAGES)
     {
-     if(animals!=null && nbrCages!=0)
+     if(animals!=null && NUMBER_OF_CAGES!=0)
      {
          return false;
      }
@@ -83,8 +82,10 @@ public class Zoo {
             {
                 return z2;
             }
-            else{
-                return z1;
-            }
+            
+    }
+    
+     boolean isZooFull() {
+        return nbrAnimals == NUMBER_OF_CAGES;
     }
 }
