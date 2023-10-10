@@ -6,7 +6,7 @@ public class Animal {
 
     public Animal() {
 
-    } 
+    }
 
     public Animal(String family, String name, int age, boolean isMammal) {
         this.family = family;

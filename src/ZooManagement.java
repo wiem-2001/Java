@@ -7,8 +7,7 @@ public class ZooManagement {
         lion.age = 8;
         lion.family = "Cats";
         lion.isMammal = true;
- 
- 
+
         Zoo myZoo = new Zoo();
         myZoo.name = "Wildlife Park";
         myZoo.city = "Ariana";
