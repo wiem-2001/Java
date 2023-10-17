@@ -1,29 +1,43 @@
 public class Zoo {
 
     Animal[] animals;
-    String name, city;
-    final int NUMBER_OF_CAGES=25;
+    String city;
+    private String name;
+    final int nbrCages=25;
 
     int nbrAnimals;
 
     public Zoo() {
     }
-
+  
+  public void setName(String name)
+  {
+    if(name!=null)
+    {
+    this.name=name;
+    }
+    else{
+        System.out.println("Le nom d’un Zoo ne doit pas être vide");
+    }
+  }
+  public String getName()
+  {
+    return this.name;
+  }
     public Zoo(String name, String city) {
-        animals = new Animal[NUMBER_OF_CAGES];
+        animals = new Animal[nbrCages];
         this.name = name;
         this.city = city;
     }
 
     void displayZoo() {
-        System.out.println("Name: " + name + ", City: " + city + ", N° Cages/Animals: " + NUMBER_OF_CAGES);
+        System.out.println("Name: " + name + ", City: " + city + ", N° Cages/Animals: " + nbrCages);
     }
 
     boolean addAnimal(Animal animal) {
         if (searchAnimal(animal) != -1)
             return false;
-        if (nbrAnimals == NUMBER_OF_CAGES)
-            return false;
+        return isZooFull();
         animals[nbrAnimals] = animal;
         nbrAnimals++;
         return true;
@@ -60,32 +74,29 @@ public class Zoo {
 
     @Override
     public String toString() {
-        return "Name: " + name + ", City: " + city + ", N° Cages/Animals: " + NUMBER_OF_CAGES;
+        return "Name: " + name + ", City: " + city + ", N° Cages/Animals: " + nbrCages;
     }
-    public boolean isZooFull(Animal[] animals,int NUMBER_OF_CAGES)
+    public boolean isZooFull(Animal[] animals)
     {
-     if(animals!=null && NUMBER_OF_CAGES!=0)
+     if(animals.length==nbrCages)
      {
-         return false;
-     }
-     else{
          return true;
      }
+     else{
+         return false;
+     }
     }
+    
     public Zoo comparerZoo(Zoo z1, Zoo z2)
     {
             if(z1.animals.length>z2.animals.length)
             {
                 return z1;
             }
-            else if (z2.animals.length>z1.animals.length)
+            else (z2.animals.length>z1.animals.length)
             {
                 return z2;
             }
             
-    }
-    
-     boolean isZooFull() {
-        return nbrAnimals == NUMBER_OF_CAGES;
     }
 }
