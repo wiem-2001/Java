@@ -12,7 +12,7 @@ public class ZooManagement {
         myZoo.name = "Wildlife Park";
         myZoo.city = "Ariana";
         myZoo.nbrCages = 25;
-        myZoo.animals = new Animal[25];
+        myZoo.animals = new Animal[25] ;
 
 
         Animal dog = new Animal("Canine", "Snoopy", 2, true);

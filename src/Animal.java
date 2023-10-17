@@ -14,7 +14,20 @@ public class Animal {
         this.age = age;
         this.isMammal = isMammal;
     }
-
+public int getAge()
+{
+    return this.age;
+}
+public void setAge(int age)
+{
+    if(age!=0)
+    {
+        this.age=age;
+    }
+    else{
+        system.out.println("Un animal ne peut pas avoir un âge négatif");
+    }
+}
     @Override
     public String toString() {
         return "Animal{" +
@@ -22,6 +35,6 @@ public class Animal {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", isMammal=" + isMammal +
-                '}';
+                '}' ; 
     }
 }
