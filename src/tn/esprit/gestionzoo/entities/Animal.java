@@ -1,8 +1,10 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Animal {
 
-    String family, name;
-    int age;
-    boolean isMammal;
+   public String family, name;
+    public int age;
+   public boolean isMammal;
 
     public Animal() {
 
@@ -14,20 +16,7 @@ public class Animal {
         this.age = age;
         this.isMammal = isMammal;
     }
-public int getAge()
-{
-    return this.age;
-}
-public void setAge(int age)
-{
-    if(age!=0)
-    {
-        this.age=age;
-    }
-    else{
-        system.out.println("Un animal ne peut pas avoir un âge négatif");
-    }
-}
+
     @Override
     public String toString() {
         return "Animal{" +
@@ -35,6 +24,6 @@ public void setAge(int age)
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", isMammal=" + isMammal +
-                '}' ; 
+                '}';
     }
 }
