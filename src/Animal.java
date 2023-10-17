@@ -35,6 +35,6 @@ public void setAge(int age)
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", isMammal=" + isMammal +
-                '}';
+                '}' ; 
     }
 }
