@@ -50,12 +50,20 @@ public class ZooManagement {
         Aquatiques aq=new Aquatiques("Canine", "Snoopy", 2, true,"doghouse");
         Dolphin d=new Dolphin("Delphinidae", "dolphin", 2, true,"Coastal Waters",32 );
         Penguin p=new Penguin("Penguins", "Emperor Penguin", 2, true,"Antarctica",457);
+        Terrestrial terrestrial = new Terrestrial("Panda", "Narla", 4, true, 2);
+       
         System.out.println(aq.toString());
         System.out.println(d.toString());
         System.out.println(p.toString());
+        
         aq.swim();
         d.swim();
         p.swim();
+       
+        myZoo.addAnimal(aq);
+        myZoo.addAquaticAnimal(d);
+        myZoo.addAquaticAnimal(p);
     }
+    
 
 }

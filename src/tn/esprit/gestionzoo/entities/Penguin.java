@@ -11,12 +11,14 @@ public class Penguin extends Aquatiques{
 
     @Override
     public String toString() {
-        return "Penguin{" +
-                "swimmingDepth=" + swimmingDepth +
-                ", family='" + family + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", isMammal=" + isMammal +
-                '}';
+        return super.toString() + ", swimmingDepth:" + swimmingDepth;
     }
+    public float getSwimmingDepth()
+    {
+        return this.swimmingDepth;
+    }
+    public void swim() {
+        super.swim();
+        System.out.println("This Penguin is swimming.");
+       }
 }
