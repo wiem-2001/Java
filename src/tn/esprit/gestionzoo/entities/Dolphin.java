@@ -10,13 +10,7 @@ public class Dolphin extends Aquatiques{
 
  @Override
  public String toString() {
-  return "Dolphin{" +
-          "swimmingSpeed=" + swimmingSpeed +
-          ", family='" + family + '\'' +
-          ", name='" + name + '\'' +
-          ", age=" + age +
-          ", isMammal=" + isMammal +
-          '}';
+        return super.toString() + ", swimmingSpeed:" + swimmingSpeed;
  }
 
  @Override

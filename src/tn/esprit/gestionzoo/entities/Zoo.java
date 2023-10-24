@@ -6,13 +6,14 @@ public class Zoo {
     Animal[] animals;
     String name, city;
     int nbrAnimals;
-
+    Aquatiques[] aquaticAnimals;
     public Zoo() {
     }
 
     public Zoo(String name, String city) {
         animals = new Animal[NUMBER_OF_CAGES];
         this.name = name;
+        this.aquaticAnimals=new Aquatiques [10];
         this.city = city;
     }
 
@@ -72,4 +73,41 @@ public class Zoo {
     public String toString() {
         return "Name: " + name + ", City: " + city + ", N° Cages: " + NUMBER_OF_CAGES + " N° animals: " + nbrAnimals;
     }
+    public void addAquaticAnimal(Aquatiques aquatic)
+    {
+        if(this.aquaticAnimals.length<10)
+        {
+            this.aquaticAnimals[this.aquaticAnimals.length]=aquatic;
+        }
+    }
+
+    public void displayNumberOfAquaticsByType() {
+        int dolphinCount = 0;
+        int penguinCount = 0;
+    
+        for (Aquatiques aquatic : aquaticAnimals) {
+            if (aquatic != null) {
+                if (aquatic instanceof Dolphin) {
+                    dolphinCount++;
+                } else if (aquatic instanceof Penguin) {
+                    penguinCount++;
+                }
+            }
+        }
+    }
+    public float maxPenguinSwimmingDepth()
+    {
+        float maxDepth = 0.0f;
+        for (Aquatiques aquatic : aquaticAnimals) {
+             if (aquatic instanceof Penguin) {
+                Penguin penguin = (Penguin) aquatic;
+                if(penguin.getSwimmingDepth()> maxDepth)
+                {
+                    maxDepth=penguin.getSwimmingDepth();
+                }
+             }
+        }
+        return maxDepth;
+    }
+
 }
