@@ -17,6 +17,22 @@ public class Animal {
         this.isMammal = isMammal;
     }
 
+    public String getFamily() {
+        return family;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public boolean isMammal() {
+        return isMammal;
+    }
+
     @Override
     public String toString() {
         return "Animal{" +

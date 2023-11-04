@@ -27,15 +27,24 @@ public class Zoo {
         System.out.println("Name: " + name + ", City: " + city + ", N° Cages: " + NUMBER_OF_CAGES + " N° animals: " + nbrAnimals);
     }
 
-   public boolean addAnimal(Animal animal) {
-        if (searchAnimal(animal) != -1)
-            return false;
-        if (nbrAnimals == NUMBER_OF_CAGES)
-            return false;
-        animals[nbrAnimals] = animal;
-        nbrAnimals++;
-        return true;
-    }
+   public void addAnimal(Animal animal) throws ZooFullException, InvalidAgeException {
+            if (searchAnimal(animal) != -1)
+                System.out.println("animal non trouvé");
+            if(nbrAnimals<NUMBER_OF_CAGES)
+            {
+                if (animal.getAge() >= 0) {
+                animals[nbrAnimals] = animal;
+                nbrAnimals++;
+                    System.out.println("Nombre d'animaux : " + nbrAnimals);
+                } else {
+                    throw new InvalidAgeException("L'âge de l'animal ne peut pas être négatif.");
+                }
+            }
+       else {
+           throw new ZooFullException("le zoo est plein");
+            }
+
+   }
 
     public boolean removeAnimal(Animal animal) {
         int indexAnimal = searchAnimal(animal);

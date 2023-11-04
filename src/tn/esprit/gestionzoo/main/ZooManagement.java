@@ -18,9 +18,15 @@ public class ZooManagement {
         Animal dog = new Animal("Canine", "Snoopy", 2, true);
 
 
-        System.out.println(myZoo.addAnimal(lion));
-        System.out.println(myZoo.addAnimal(dog));
-
+        try { myZoo.addAnimal(lion);
+        myZoo.addAnimal(dog);
+     }catch (InvalidAgeException e) {
+        System.out.println("Erreur : " + e.getMessage());
+    }
+        catch(ZooFullException e)
+    {
+        System.out.println("Erreur : "+e.getMessage());
+    }
         myZoo.displayAnimals();
 
         System.out.println(myZoo.searchAnimal(dog));
@@ -33,9 +39,16 @@ public class ZooManagement {
 
         System.out.println(myZoo);
 
-        myZoo.addAnimal(lion);
+        try { myZoo.addAnimal(lion);
         myZoo.addAnimal(dog);
         myZoo.addAnimal(dog2);
+        }catch (InvalidAgeException e) {
+        System.out.println("Erreur : " + e.getMessage());
+    }
+        catch(ZooFullException e)
+        {
+            System.out.println("Erreur : "+e.getMessage());
+        }
         myZoo.displayAnimals();
         System.out.println("a" + myZoo.removeAnimal(lion));
         myZoo.displayAnimals();
@@ -60,9 +73,16 @@ public class ZooManagement {
         d.swim();
         p.swim();
        
-        myZoo.addAnimal(aq);
-        myZoo.addAquaticAnimal(d);
-        myZoo.addAquaticAnimal(p);
+       try {
+           myZoo.addAnimal(aq);
+           myZoo.addAquaticAnimal(d);
+           myZoo.addAquaticAnimal(p);
+       }catch (InvalidAgeException e) {
+           System.out.println("Erreur : " + e.getMessage());
+       }catch(ZooFullException e)
+       {
+           System.out.println("Erreur : "+e.getMessage());
+       }
     }
     
 
