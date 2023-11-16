@@ -1,6 +1,9 @@
 package tn.esprit.gestionzoo.main;
 
 import tn.esprit.gestionzoo.entities.*;
+import tn.esprit.gestionzoo.enums.Food;
+import tn.esprit.gestionzoo.exceptions.InvalidAgeException;
+import tn.esprit.gestionzoo.exceptions.ZooFullException;
 
 public class ZooManagement {
 
@@ -83,6 +86,10 @@ public class ZooManagement {
        {
            System.out.println("Erreur : "+e.getMessage());
        }
+        aq.eatMeat(Food.MEAT);
+        p.eatMeat(Food.MEAT);
+        terrestrial.eatPlantAndMeet(Food.BOTH);
+
     }
     
 

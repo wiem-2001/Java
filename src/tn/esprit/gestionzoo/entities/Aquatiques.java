@@ -1,8 +1,11 @@
 package tn.esprit.gestionzoo.entities;
 
+import tn.esprit.gestionzoo.enums.Food;
+import tn.esprit.gestionzoo.interfaces.Carnivore;
+
 import java.util.Objects;
 
-public class Aquatiques extends Animal{
+public class Aquatiques extends Animal implements Carnivore<Food>{
     private String habitat ;
 
     public Aquatiques(String family, String name, int age, boolean isMammal, String habitat) {
@@ -26,5 +29,10 @@ public class Aquatiques extends Animal{
     public void swim()
     {
         System.out.println("This aquatic animal is swimming.");
+    }
+
+    @Override
+    public void eatMeat(Food meat) {
+        System.out.println("meat");
     }
 }
