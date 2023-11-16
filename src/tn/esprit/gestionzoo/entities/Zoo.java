@@ -1,5 +1,8 @@
 package tn.esprit.gestionzoo.entities;
 
+import tn.esprit.gestionzoo.exceptions.InvalidAgeException;
+import tn.esprit.gestionzoo.exceptions.ZooFullException;
+
 public class Zoo {
 
     static final int NUMBER_OF_CAGES = 25;
