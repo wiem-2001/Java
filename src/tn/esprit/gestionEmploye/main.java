@@ -4,7 +4,7 @@ package tn.esprit.gestionEmploye;
 
 public class main {
     public static void main(String[] args) {
-         SocieteArrayList S = new SocieteArrayList();
+    /*     SocieteArrayList S = new SocieteArrayList();
         Employe e1 = new Employe(1, "Ben Mansour", "Wiem", "J24", 17);
         Employe e2 = new Employe(2, "Fedi", "Ben Mansour", "G40", 15);
         Employe e3 = new Employe(3, "Mohamed", "Mejri", "A23", 15);
@@ -22,6 +22,9 @@ public class main {
         S.trierEmployeParId();
         S.displayEmploye();
         S.trierEmployeParNomDepartementEtGrade();
-        S.displayEmploye();
+        S.displayEmploye(); */
+
+        Etudiant etud1=new Etudiant(1,22,"wiem");
+
     }
 }
